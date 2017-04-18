@@ -1,0 +1,166 @@
+@color: #3e86ce;
+
+// 定义一些方法
+.hlh(@h) {
+	height: @h;
+	line-height: @h;
+}
+.arrow(@dir, @c, @w) {
+	width: 0;
+	font-size: 0;
+	border: @w solid transparent;
+	border-@{dir}: @w solid @c; 
+}
+
+// 清空样式
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.header {
+	.hlh(50px);
+	background: @color;
+	color: #fff;
+	.go-back {
+		float: left;
+		position: relative;
+		margin-left: 10px;
+		.arrow {
+			.arrow(right, #fff, 10px);
+			position: absolute;
+			top: 14px;
+			left: 0;
+		}
+		.blue {
+			.arrow(right, @color, 10px);
+			top: 14px;
+			left: 3px;
+		}
+	}
+	.login {
+		float: right;
+		margin-right: 10px;
+	}
+	h1 {
+		font-size: 25px;
+		text-align: center;
+		text-indent: 20px;
+	}
+}
+.home {
+	li {
+		padding: 10px;
+		border-bottom: 1px solid #ccc;
+		img {
+			width: 80px;
+			height: 60px;
+			float: left;
+		}
+		.content {
+			margin-left: 90px;
+			text-align: left;
+		}
+		h2 {
+			padding-bottom: 4px;
+			font-size: 14px;
+			white-space: nowrap;
+		    text-overflow: ellipsis;
+		    overflow: hidden;
+		}
+		p {
+			font-size: 12px;
+			line-height: 20px;
+			.home-comment {
+				float: right;
+			}
+		}
+	}
+}
+.detail {
+	font-size: 14px;
+	text-align: left;
+	line-height: 30px;
+	h2 {
+		font-size: 20px;
+		line-height: 50px;
+		text-align: center;
+	}
+	.detail-state {
+		padding: 0 20px;
+	}
+	.right {
+		float: right;
+	}
+	img {
+		margin-bottom: 10px;
+		width: 100%;
+	}
+	.content {
+		padding: 0 20px;
+	}
+	.show-comment {
+		.hlh(40px);
+		margin: 20px 20px 40px;
+		font-size: 16px;
+		color: #fff;
+		text-align: center;
+		background: @color;
+		border-radius: 6px;
+	}
+}
+.comment {
+	.comment-input {
+		padding: 30px 20px;
+		textarea {
+			background: #efefef;
+			border: 1px solid #ccc;
+			padding: 5px;
+			font-size: 12px;
+			line-height: 18px;
+			display: block;
+		    outline: none;
+		    height: 100px;
+		    width: 100%;
+		    box-sizing: border-box;
+		}
+	}
+	.submit-btn {
+		display: inline-block;
+		padding: 8px 20px;
+		border-radius: 5px;
+		background: @color;
+		color: #fff;
+		font-size: 16px;
+		float: right;
+		margin-right: 20px;
+		margin-bottom: 30px;
+	}
+	ul {
+		clear: both;
+		padding: 0 20px 40px;
+		li {
+			border-bottom: 1px solid #ccc;
+			padding: 5px 0;
+			text-align: left;
+			h3 {
+				line-height: 40px;
+				font-size: 16px;
+			}
+			p {
+				line-height: 20px;
+				font-size: 14px;
+			}
+			span {
+				font-size: 12px;
+				line-height: 30px;
+			}
+		}
+	}
+}
